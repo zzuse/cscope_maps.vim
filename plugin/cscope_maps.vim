@@ -31,8 +31,13 @@ if has("cscope")
     """"""""""""" Standard cscope/vim boilerplate
 
     " use both cscope and ctag for 'ctrl-]', ':ta', and 'vim -t'
+    set tags=$CTAGS_DB,./tags;
     set cscopetag
-
+    set csprg=/opt/local/bin/cscope
+    "set csprg=/local/zhangzhen/cscope/bin/cscope
+    set cst
+    set nocsverb  
+    "set csverb
     " check cscope for definition of a symbol before checking ctags: set to 1
     " if you want the reverse search order.
     set csto=0
@@ -46,8 +51,8 @@ if has("cscope")
     endif
 
     " show msg when any other cscope db added
-    set cscopeverbose  
-
+    "set cscopeverbose  
+    set cscopequickfix=s-,g-,c-,d-,t-,e-,f-,i-
 
     """"""""""""" My cscope/vim key mappings
     "
@@ -122,14 +127,14 @@ if has("cscope")
     " (Note: you may wish to put a 'set splitright' in your .vimrc
     " if you prefer the new window on the right instead of the left
 
-    nmap <C-@><C-@>s :vert scs find s <C-R>=expand("<cword>")<CR><CR>
-    nmap <C-@><C-@>g :vert scs find g <C-R>=expand("<cword>")<CR><CR>
-    nmap <C-@><C-@>c :vert scs find c <C-R>=expand("<cword>")<CR><CR>
-    nmap <C-@><C-@>t :vert scs find t <C-R>=expand("<cword>")<CR><CR>
-    nmap <C-@><C-@>e :vert scs find e <C-R>=expand("<cword>")<CR><CR>
-    nmap <C-@><C-@>f :vert scs find f <C-R>=expand("<cfile>")<CR><CR>	
-    nmap <C-@><C-@>i :vert scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>	
-    nmap <C-@><C-@>d :vert scs find d <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-\><C-\>s :vert scs find s <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-\><C-\>g :vert scs find g <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-\><C-\>c :vert scs find c <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-\><C-\>t :vert scs find t <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-\><C-\>e :vert scs find e <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-\><C-\>f :vert scs find f <C-R>=expand("<cfile>")<CR><CR>	
+    nmap <C-\><C-\>i :vert scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>	
+    nmap <C-\><C-\>d :vert scs find d <C-R>=expand("<cword>")<CR><CR>
 
 
     """"""""""""" key map timeouts
@@ -143,7 +148,7 @@ if has("cscope")
     " Or, you can keep timeouts, by uncommenting the timeoutlen line below,
     " with your own personal favorite value (in milliseconds):
     "
-    "set timeoutlen=4000
+    set timeoutlen=4000
     "
     " Either way, since mapping timeout settings by default also set the
     " timeouts for multicharacter 'keys codes' (like <F1>), you should also
@@ -151,14 +156,14 @@ if has("cscope")
     " delays as vim waits for a keystroke after you hit ESC (it will be
     " waiting to see if the ESC is actually part of a key code like <F1>).
     "
-    "set ttimeout 
+    set ttimeout 
     "
     " personally, I find a tenth of a second to work well for key code
     " timeouts. If you experience problems and have a slow terminal or network
     " connection, set it higher.  If you don't set ttimeoutlen, the value for
     " timeoutlent (default: 1000 = 1 second, which is sluggish) is used.
     "
-    "set ttimeoutlen=100
+    set ttimeoutlen=100
 
 endif
 
