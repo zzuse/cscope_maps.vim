@@ -33,8 +33,7 @@ if has("cscope")
     " use both cscope and ctag for 'ctrl-]', ':ta', and 'vim -t'
     set tags=$CTAGS_DB,./tags;
     set cscopetag
-    set csprg=/opt/local/bin/cscope
-    "set csprg=/local/zhangzhen/cscope/bin/cscope
+    set csprg=cscope
     set cst
     set nocsverb  
     "set csverb
